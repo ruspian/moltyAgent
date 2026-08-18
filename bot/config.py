@@ -1,6 +1,7 @@
 """
 Configuration & constants for Molty Royale AI Agent.
 All env vars loaded here. Never hardcode secrets.
+Modified: Updated to v1.15.0 and new ONE Chain RPC endpoints.
 """
 import os
 from pathlib import Path
@@ -9,15 +10,15 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # ── Skill / API version ──────────────────────────────────────────────
-SKILL_VERSION = "1.5.2"
+SKILL_VERSION = "1.15.0"
 
 # ── URLs ──────────────────────────────────────────────────────────────
-API_BASE = "https://cdn.moltyroyale.com/api"
-WS_URL = "wss://cdn.moltyroyale.com/ws/agent"
+API_BASE = "https://cdn.clawroyale.ai/api"
+WS_URL = "wss://cdn.clawroyale.ai/ws/agent"
 
-# ── Chain config (CROSS Mainnet) ──────────────────────────────────────
+# ── Chain config (ONE Mainnet) ────────────────────────────────────────
 CROSS_CHAIN_ID = 612055
-CROSS_RPC = "https://mainnet.crosstoken.io:22001"
+CROSS_RPC = "https://mainnet.onechain.nexus:22001"
 
 # ── Contract addresses ────────────────────────────────────────────────
 IDENTITY_REGISTRY = "0x8004A169FB4a3325136EB29fA0ceB6D2e539a432"
@@ -70,4 +71,3 @@ AUTO_SC_WALLET = os.getenv("AUTO_SC_WALLET", "true").lower() == "true"       # Q
 ENABLE_MEMORY = os.getenv("ENABLE_MEMORY", "true").lower() == "true"         # Q7: cross-game learning
 ENABLE_AGENT_TOKEN = os.getenv("ENABLE_AGENT_TOKEN", "false").lower() == "true"  # Q8: agent token
 AUTO_IDENTITY = os.getenv("AUTO_IDENTITY", "true").lower() == "true"         # Q9: ERC-8004 auto-register
-
